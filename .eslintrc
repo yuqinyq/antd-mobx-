@@ -1,0 +1,29 @@
+{
+  "extends": ["standard", "plugin:react/recommended", "prettier"],
+  "plugins": [
+    "prettier",
+    "react"
+  ],
+  "rules": {
+    "prettier/prettier": "off",
+    "no-debugger":"off",
+    "no-unused-vars": 1,
+    "react/display-name": "off",
+    "react/prop-types": "off",
+    "standard/computed-property-even-spacing": [2, "even"]
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+        "jsx": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "es6": true,
+    "node": true,
+    "jest": true
+  },
+  "parser": "babel-eslint"
+}

@@ -1,0 +1,53 @@
+{
+  "name": "cacloud",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.5.4",
+    "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
+    "mobx": "^4.3.0",
+    "mobx-react": "^5.1.2",
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-loadable": "^5.4.0",
+    "react-resizable": "^1.8.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "utils": "^0.3.1"
+  },
+  "scripts": {
+    "start": " cross-env NODE_QF=dev react-app-rewired --max_old_space_size=4096 start",
+    "build": "cross-env NODE_QF=pro react-app-rewired --max_old_space_size=4096 build",
+    "build-pre": "cross-env NODE_QF=pre react-app-rewired --max_old_space_size=4096 build",
+    "build-test": "cross-env NODE_QF=test react-app-rewired --max_old_space_size=4096 build",
+    "prettier": "prettier \"src/**/*.{js,jsx}\" --write",
+    "eslint": "eslint \"src/axios/**/*.{js,jsx}\" --quiet",
+    "test": "react-app-rewired test --env=jsdom"
+  },
+  "homepage": "打包后build存放地址",
+  "devDependencies": {
+    "babel-plugin-import": "^1.12.0",
+    "cross-env": "^5.2.0",
+    "dotenv": "^6.0.0",
+    "eslint": "^5.5.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-loader": "^2.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "prettier": "^1.14.2",
+    "react-app-rewire-less": "2.1.1",
+    "react-app-rewire-mobx": "^1.0.8",
+    "react-app-rewire-preact": "^1.0.1",
+    "react-app-rewire-preload-plugin": "^1.0.0",
+    "react-app-rewired": "^1.5.2",
+    "screenfull": "^3.3.2",
+    "webpack": "3.8.1"
+  }
+}
