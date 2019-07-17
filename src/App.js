@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-07-15 16:55:06
  * @LastEditors: yuqin
- * @LastEditTime: 2019-07-17 11:45:18
+ * @LastEditTime: 2019-07-17 14:50:19
  */
 
 import React from "react";
@@ -26,24 +26,20 @@ import { getAsyncComponent } from "./utils/index";
 
 // * 按需加载的组件
 const AsyncLogin = getAsyncComponent({ dynamicImport: () => import('./pages/login') });
-// const AsyncGlobalLayout = getAsyncComponent({
-//   dynamicImport: () => import("./pages/GlobalLayout")
-// });
+const AsyncGlobalLayout = getAsyncComponent({
+  dynamicImport: () => import("./pages/globalLayout")
+});
 
 export const App = () => (
   <Provider {...store}>
     <LocaleProvider locale={zhCN}>
       <Router>
         <Switch>
-        <Route exact path="/" render={() => <Redirect to="/login" push />} />
-          <Route exact path="/login" component={AsyncLogin}/>
+          <Route exact path="/" render={() => <Redirect to="/login" push />} />
+          <Route exact path="/login" component={AsyncLogin} />
           <Auth>
             <Switch>
-              <Route
-                exact
-                path="/"
-                render={() => <Redirect to="/table/antd" push />}
-              />
+              <Route path="/qf" component={AsyncGlobalLayout} />
               <Route exact path="/500" render={() => <Exception type="500" />} />
               <Route render={() => <Exception type="404" />} />
             </Switch>

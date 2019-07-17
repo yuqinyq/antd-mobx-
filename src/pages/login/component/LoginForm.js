@@ -19,7 +19,7 @@ class LoginFormComponent extends Component {
             description: '登录成功'
           })
           localStorage.setItem("qfLoginInfo", data);
-          this.props.history.replace("table/antd");
+          this.props.history.replace("qf");
         } else if (values.checkCode !== '1024') {
           notification.error({
             message: '提示',

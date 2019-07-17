@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import { withRouter } from 'react-router-dom'
 import { LoginForm } from "./component/LoginForm";
 
-
-
 class Login extends Component {
 
   render() {
