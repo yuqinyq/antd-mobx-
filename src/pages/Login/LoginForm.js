@@ -92,6 +92,7 @@ class LoginForm extends React.Component {
                 addonBefore={<span className='iconfont icon-suo1' style={focusItem === 1 ? styles.focus : {}}/>}/>
             )}
           </Form.Item>
+
           <div className='bottom'>
             <input className='loginBtn' type="submit" value='登录'/>
           </div>

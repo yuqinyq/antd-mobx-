@@ -89,7 +89,7 @@ class Step1 extends React.Component{
         </Form>
         <Divider/>
         <div className='desc'>
-          <h3>说明</h3>
+          {/* <h3>说明</h3>
           <h4>转账到支付宝账户</h4>
           <p>
             如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
@@ -97,7 +97,7 @@ class Step1 extends React.Component{
           <h4>转账到银行卡</h4>
           <p>
             如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。如果需要，这里可以放一些关于产品的常见问题说明。
-          </p>
+          </p> */}
         </div>
         <BackTop visibilityHeight={200} style={{right: 50}}/>
       </div>
@@ -228,7 +228,7 @@ class FormDemo2 extends React.Component {
     return (
       <div>
         <CustomBreadcrumb arr={['输入', '表单','分步表单']}/>
-        <TypingCard source='将一个冗长或用户不熟悉的表单任务分成多个步骤，指导用户完成'/>
+        {/* <TypingCard source='将一个冗长或用户不熟悉的表单任务分成多个步骤，指导用户完成'/> */}
         <Card title='分步表单' bordered={false} style={{minHeight: 600}}>
           <Steps style={styles.steps} current={this.props.stepFormStore.current}>
             <Step title="填写转账信息" />

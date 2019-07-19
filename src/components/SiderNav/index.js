@@ -7,6 +7,10 @@ const menus = [
     title: '首页',
     icon: 'home',
     key: '/home'
+  },{
+    title:'表单组件',
+    icon:'table',
+    key:'/home/table'
   },
   {
     title: '基本组件',
@@ -67,7 +71,7 @@ const menus = [
     ]
   },
   {
-    title: '其它',
+    title: '设置',
     icon: 'bulb',
     key: '/home/other',
     subs: [
@@ -80,7 +84,7 @@ const menus = [
     ]
   },
   {
-    title: '关于',
+    title: '个人信息',
     icon: 'info-circle-o',
     key: '/home/about'
   }

@@ -3,6 +3,7 @@
 基础的 mobx 模板，集成`mobx` + `mobx-react` + `react-router4` + `axios` + `antd`和相应的 webpack 配置
 
 ### Quick Start
+
 ```
 yarn create react-app my-app
 cd antd-demo
@@ -12,20 +13,21 @@ cd antd-demo
 $ yarn 或 npm install
 ```
 
-* 开始开发: `yarn start`
-* 编译到测试环境: `yarn build-test`
-* 编译到线上环境: `yarn build`
+- 开始开发: `yarn start`
+- 编译到测试环境: `yarn build-test`
+- 编译到线上环境: `yarn build`
 
-打包后的build的存放目录在package.json的homepage中的配置
+打包后的 build 的存放目录在 package.json 的 homepage 中的配置
 
 ### 目录结构
+
 ```
-├── build                    # 打包后生成的build文件       
+├── build                    # 打包后生成的build文件
 ├── node_modules             # 所有的依赖包
 ├── public
 │   ├── favicon.ico          # Favicon
-│   └── index.html           
-│   └── manifest.json        
+│   └── index.html
+│   └── manifest.json
 ├── src
 │   ├── assets               # 本地静态资源
 │   ├── axios                # 后台请求http封装
@@ -39,7 +41,7 @@ $ yarn 或 npm install
 │   ├── App.js               # 顶层组件入口文件
 │   ├── App.test.js
 │   ├── index.js             # 项目的整体js入口文件
-│   ├── logo.svg   
+│   ├── logo.svg
 │   └── registerServiceWorker.js
 ├── .babelrc                 # babel转码文件
 ├── .editorconfig            # 帮助开发人员在不同的编辑器和IDE之间定义和维护一致的编码样式
@@ -57,15 +59,16 @@ $ yarn 或 npm install
 ├── README.md                # 项目说明文档
 └── yarn.lock                # yarn命令自动生成的
 ```
+
 ### 环境变量
 
 #### 配置环境变量
 
 开发环境，测试环境，线上环境的变量都配置在不同的文件中除了`PUBLIC_URL`, `NODE_ENV`等内置的变量，自定义变量都需要以`QF_`开头
 
-* 开发环境`.env.dev`
-* 测试环境`.env.test`
-* 线上环境`.env.pro`
+- 开发环境`.env.dev`
+- 测试环境`.env.test`
+- 线上环境`.env.pro`
 
 #### 使用环境变量
 
@@ -73,7 +76,7 @@ html 中
 
 ```html
 <!-- PUBLIC_URL -->
-<link rel="manifest" href="%PUBLIC_URL%/manifest.json">
+<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
 ```
 
 js 中
@@ -88,3 +91,19 @@ const publicUrl = process.env.QF_BASEURL
 在 commit 之前会做一次 eslint 检测，如果检测不通过，commit 会失败，因此请注意代码规范。  
 请自行安装自己 IDE 的 eslint 插件和 prettier 插件
 
+### 命名规范约定
+
+#### 文件夹及文件命名
+
+```
+components-> 公用组件文件夹--大写字母开头驼峰命名  例：CustomBreadcrumb（面包屑组件）
+pages-> 业务页面文件夹--大写字母开头驼峰命名      例：Home(首页模块)
+所有组件命名都以大写驼峰开头，其余小写驼峰命名
+```
+
+#### css 命名
+
+```
+class 命名以 qf-开头 例： qf-header-image (头部头像样式)
+```
+......
