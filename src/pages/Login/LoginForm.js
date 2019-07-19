@@ -63,7 +63,7 @@ class LoginForm extends React.Component {
     const {focusItem} = this.state
     return (
       <div className={this.props.className}>
-        <h3 className='title'>管理员登录</h3>
+        <h3 className='title'>用户登录</h3>
         <Form onSubmit={this.loginSubmit}>
           <Form.Item help={getFieldError('username') &&
           <PromptBox info={getFieldError('username')} width={calculateWidth(getFieldError('username'))}/>}>
@@ -96,9 +96,6 @@ class LoginForm extends React.Component {
             <input className='loginBtn' type="submit" value='登录'/>
           </div>
         </Form>
-        {/* <div className='footer'>
-          <div>欢迎登陆决策系统</div>
-        </div> */}
       </div>
     )
   }

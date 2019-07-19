@@ -12,7 +12,7 @@ class HeaderBar extends React.Component {
     icon: 'arrows-alt',
     count: 100,
     visible: false,
-    avatar: require('./img/04.jpg')
+    avatar: require('./img/timg.jpg')
   }
 
   componentDidMount () {

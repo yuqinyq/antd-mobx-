@@ -27,19 +27,20 @@
     height: 100%;
     padding: 90px 40px 40px 40px;
     backface-visibility: hidden;
-    background: linear-gradient(230deg, rgba(53, 57, 74, 0) 0%, rgb(0, 0, 0) 100%);
+    background: linear-gradient(300deg, rgba(53, 57, 74, 0) 0%, rgb(0, 0, 0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='rgba(53, 57, 74, 0)', endColorstr='rgb(0, 0, 0)',GradientType=1 );
     box-shadow: -15px 15px 15px rgba(0,0,0,.4);
     transition: all 1s;
 }
 #login-page .showBox{
     transform:rotateY(0deg);
+    text-align: center
 }
 #login-page .hiddenBox{
     transform:rotateY(180deg);
 }
 #login-page .loginBtn{
-    padding: 10px 50px;
+    padding: 10px 100px;
     border: 2px solid #4FA1D9;
     border-radius: 50px;
     background: transparent;
@@ -50,8 +51,9 @@
 #login-page .bottom{
     display: flex;
     height: 42px;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 #login-page .registerBtn{
     color: #D3D7F7;
@@ -68,7 +70,8 @@
 #login-page .title{
     height: 60px;
     color:#D3D7F7;
-    font-size: 16px;
+    font-size: 20px;
+    letter-spacing: 8px;
     margin-bottom: 0;
 }
 #login-page .footer{

@@ -3,10 +3,11 @@
 基础的 mobx 模板，集成`mobx` + `mobx-react` + `react-router4` + `axios` + `antd`和相应的 webpack 配置
 
 ### Quick Start
-
-$ yarn create react-app my-app
-$ cd antd-demo
 ```
+yarn create react-app my-app
+cd antd-demo
+
+
 拉下代码通过以下命令建立依赖:
 $ yarn 或 npm install
 ```
@@ -15,7 +16,10 @@ $ yarn 或 npm install
 * 编译到测试环境: `yarn build-test`
 * 编译到线上环境: `yarn build`
 
+打包后的build的存放目录在package.json的homepage中的配置
+
 ### 目录结构
+```
 ├── build                    # 打包后生成的build文件       
 ├── node_modules             # 所有的依赖包
 ├── public
@@ -35,7 +39,8 @@ $ yarn 或 npm install
 │   ├── App.js               # 顶层组件入口文件
 │   ├── App.test.js
 │   ├── index.js             # 项目的整体js入口文件
-│   └── serviceWorker.js
+│   ├── logo.svg   
+│   └── registerServiceWorker.js
 ├── .babelrc                 # babel转码文件
 ├── .editorconfig            # 帮助开发人员在不同的编辑器和IDE之间定义和维护一致的编码样式
 ├── .env.dev                 # 本地开发的环境变量
@@ -51,7 +56,7 @@ $ yarn 或 npm install
 ├── package.json             # 定义了这个项目所需要的各种模块，以及项目的配置信息（比如名称、版本、许可证等元数据）
 ├── README.md                # 项目说明文档
 └── yarn.lock                # yarn命令自动生成的
-
+```
 ### 环境变量
 
 #### 配置环境变量

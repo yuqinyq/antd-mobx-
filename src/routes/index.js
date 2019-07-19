@@ -1,8 +1,8 @@
 import React from 'react'
 import {Layout} from 'antd'
-import SiderNav from '../../components/SiderNav'
-import ContentMain from '../../components/ContentMain'
-import HeaderBar from '../../components/HeaderBar'
+import SiderNav from '../components/SiderNav'
+import ContentMain from '../components/ContentMain'
+import HeaderBar from '../components/HeaderBar'
 
 const {Sider, Header, Content, Footer} = Layout
 
@@ -27,7 +27,8 @@ class Index extends React.Component{
                  trigger={null}
                  collapsed={this.state.collapsed}
                  >
-            <SiderNav/>
+
+            <SiderNav collapsed={this.state.collapsed}/>
           </Sider>
           <Layout style={{zIndex: '2'}}>
             <Header style={{background: '#fff', padding: '0 16px'}}>
@@ -36,7 +37,7 @@ class Index extends React.Component{
             <Content>
               <ContentMain/>
             </Content>
-            <Footer style={{textAlign: 'center'}}>React-Admin ©2019 Created by diaoqi</Footer>
+            <Footer style={{textAlign: 'center'}}>决策系统 ©2019 Created by yuqin</Footer>
           </Layout>
         </Layout>
       </div>
