@@ -1,6 +1,5 @@
 
 const rewireMobX = require('react-app-rewire-mobx');
-const rewirePreact = require('react-app-rewire-preact');
 const rewireLess = require('react-app-rewire-less');
 const {injectBabelPlugin} = require('react-app-rewired');
 const overrideAntdThemeStyle = require('./ant-theme-override');
@@ -86,12 +85,5 @@ module.exports = function override(config, env){
     new webpack.DefinePlugin(stringified),
     ...oPlugins
   ]
-
-  // 在 GoogleChromeLabs 团队解决我提的 Issue 之前暂时不要使用
-  // 因为会浪费带宽，并且导致二次获取
-  // config = rewirePreloadPlugin(config, env, {
-  //   rel: 'prefetch',
-  //   include: 'asyncChunks'
-  // });
   return config;
 }

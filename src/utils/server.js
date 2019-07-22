@@ -28,10 +28,10 @@ let server = {
       err => {
         return Promise.reject(err);
       });
-    
+
     http.interceptors.response.use(function (response) {
       if (response.data) {
-        if (response.data.errorCode == "1002" || response.data.errorCode == "1001" || response.data.errorCode == '1003') {
+        if (response.data.errorCode === "1002" || response.data.errorCode === "1001" || response.data.errorCode === '1003') {
           localStorage.clear()
           // Message({
           //   message: '登录过期或未登录，即将跳转至登录页...',
@@ -42,7 +42,7 @@ let server = {
           message.warning('登录过期或未登录，即将跳转至登录页...', 1, () => {
             console.log(123)
           });
-        } else if (response.data.errorCode != '0') {
+        } else if (response.data.errorCode !== '0') {
           notification.open({
             message: '提示',
             description:response.data.msg
