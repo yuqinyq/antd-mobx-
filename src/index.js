@@ -9,7 +9,10 @@ import { Provider} from 'mobx-react'
 import { LocaleProvider } from 'antd'
 import zh_CN from 'antd/lib/locale-provider/zh_CN'
 import store from './store'
+import moment from 'moment';
+import 'moment/locale/zh-cn';
 
+moment.locale('zh-cn');
 //打包时，用的HashRouter并加上了basename，因为放在服务器的二级目录下
 ReactDOM.render(
   <BrowserRouter>

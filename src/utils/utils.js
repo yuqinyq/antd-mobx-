@@ -1,3 +1,5 @@
+import moment from 'moment'
+
 function accMul(arg1, arg2) {
   let m = 0;
   const s1 = arg1.toString();
@@ -49,8 +51,8 @@ export function randomNum(min, max) {
  * @param str
  * @returns {number}
  */
-export function calculateWidth(arr){
-  return 30 + arr[0].length*15
+export function calculateWidth(arr) {
+  return 30 + arr[0].length * 15
 }
 
 /**
@@ -58,9 +60,9 @@ export function calculateWidth(arr){
  * @param data
  * @returns {Object}
  */
-export function formatParams(data){
+export function formatParams(data) {
   var obj = []
-  
+
   if (localStorage && !!localStorage.loginInfor) {
     var token = JSON.parse(localStorage.loginInfor).infor.token
     obj.push(('token=') + token)
@@ -76,4 +78,29 @@ export function formatParams(data){
   let seddata = obj.join('&')// 拼接
 
   return seddata
+}
+
+
+/**
+ * 获取日期区间    本日 本周  本月  本年
+ * @param data
+ * @returns {Object}   [ startDate,endDate ]
+ */
+
+export function getRangeDate(type) {
+  let obj = []
+  if (type === 'day') {
+    obj = [moment(), moment()]
+  } else if (type === 'week') {
+    obj = [moment().day(1), moment().day(7)]
+  } else if (type === 'month') {
+    obj = [moment().month(moment().month()).startOf('month'),
+    moment().month(moment().month()).endOf('month')]
+  } else if (type === 'year') {
+    obj = [moment().year(moment().year()).startOf('year'),
+    moment().year(moment().year()).endOf('year')]
+  } else {
+    obj = []
+  }
+  return obj
 }
