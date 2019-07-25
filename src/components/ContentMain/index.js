@@ -7,7 +7,8 @@ const Home = LoadableComponent(() => import('../../pages/Home/index'))  //参数
 
 
 // 表单组件Demo
-const TableList = LoadableComponent(() => import('../../pages/Table/index'))
+const EditTableList = LoadableComponent(() => import('../../pages/Table/EditTable'))
+const LookTableList = LoadableComponent(() => import('../../pages/Table/LookTable'))
 
 //基本组件Demo
 const ButtonDemo = LoadableComponent(() => import('../../pages/General/ButtonDemo/index'))
@@ -54,7 +55,8 @@ class ContentMain extends React.Component {
         <Switch>
           <PrivateRoute exact path='/home' component={Home} />
 
-          <PrivateRoute   exact path='/home/table' component={TableList}/>
+          <PrivateRoute exact path='/home/table/edit' component={EditTableList} />
+          <PrivateRoute exact path='/home/table/look' component={LookTableList} />
 
           <PrivateRoute exact path='/home/general/button' component={ButtonDemo} />
           <PrivateRoute exact path='/home/general/icon' component={IconDemo} />

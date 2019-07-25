@@ -10,7 +10,11 @@ const menus = [
   },{
     title:'表单组件',
     icon:'table',
-    key:'/home/table'
+    key:'/home/table',
+    subs:[
+      {key:'/home/table/edit',title:'表单编辑',icon:''},
+      {key:'/home/table/look',title:'表单查询',icon:''}
+    ]
   },
   {
     title: '基本组件',

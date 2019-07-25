@@ -2,6 +2,7 @@ import '@babel/polyfill'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/index.less';
+import '../node_modules/react-resizable/css/styles.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import {BrowserRouter} from 'react-router-dom'
