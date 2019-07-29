@@ -1,38 +1,12 @@
 import React from "react";
-import { DataListApi } from '../../api'
-import { columns } from '../columns'
 import { Table } from 'antd';
+import { observer } from 'mobx-react'
 
-
-
+@observer
 class TableList extends React.Component {
 
-  state = {
-    data: { list: [] },
-    loading: false,
-    pageNo: 1,
-  }
-
-  componentDidMount() {
-    this.listInfo()
-  }
-
-
-  listInfo = async () => {
-    this.setState({
-      loading: true
-    })
-    const data = await DataListApi()
-    if (data.success) {
-      this.setState({
-        data: data.result,
-        loading: false,
-      })
-    }
-  }
 
   render() {
-    const { data, loading, pageNo } = this.state
     const rowSelection = {
       onChange: (selectedRowKeys, selectedRows) => {
         console.log(`selectedRowKeys: ${selectedRowKeys}`, 'selectedRows: ', selectedRows);
@@ -42,27 +16,25 @@ class TableList extends React.Component {
         name: record.name,
       }),
     };
-
+    const { store } = this.props
     return (
-          <Table
-            columns={columns(data)}
-            dataSource={data.list}
-            bordered
-            loading={loading}
-            rowSelection={rowSelection}
-            pagination={{
-              total: data.count,
-              pageSize: 8,
-              current: pageNo,
-              onChange: (pageNo) => {
-                this.setState({
-                  pageNo: pageNo
-                }, () => {
-                  this.listInfo()
-                })
-              }
-            }}
-          />
+      <Table
+        columns={store.columns}
+        dataSource={store.list}
+        bordered
+        loading={store.loading}
+        rowSelection={rowSelection}
+        pagination={{
+          total: store.total,
+          pageSize: store.pageSize,
+          current: store.pageNo,
+          onChange: (pageNo) => {
+            store.fetchList({
+              pageNo
+            })
+          }
+        }}
+      />
     )
   }
 }
