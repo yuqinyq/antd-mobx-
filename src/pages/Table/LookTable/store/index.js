@@ -47,10 +47,13 @@ export default class SearchListStore extends Base {
     }
     return data
   }
+
   @action
   columnsChange = checkedKeys => {
     this.checkedKeys = checkedKeys
+
     this.columns = columns(this.list,checkedKeys)
+    console.log(columns(this.list,checkedKeys))
   }
 
 

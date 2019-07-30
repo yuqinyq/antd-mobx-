@@ -1,4 +1,4 @@
-export const columns = (data,checkedKeys) => {
+export const columns = (data, checkedKeys) => {
   let len = (data, name, key) => {
     return data && data.filter(function (item, index) {
       return item[key] === name;
@@ -142,13 +142,23 @@ export const columns = (data,checkedKeys) => {
     }
   ]
   let newColumns = []
-  checkedKeys && checkedKeys.map(key => {
-    newColumns.push(columusList.find(item => key === item.key))
+
+  columusList.map((item) => {
+    if (checkedKeys.indexOf(item.key) > -1) {
+      newColumns.push(item)
+    } else if (item.children &&
+      (item.children.filter(res => checkedKeys.indexOf(res.key) > -1)).length > 0) {
+        newColumns.push(item)
+        item.children.map((d,i)=>{
+          if(checkedKeys.indexOf(d.key) === -1){
+              newColumns[newColumns.length-1].children.splice(i,1)
+          }
+        })
+    }
   })
   return newColumns
+
 }
-
-
 
 
 export const columnsAll = [
