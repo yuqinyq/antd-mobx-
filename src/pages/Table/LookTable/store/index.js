@@ -22,6 +22,8 @@ export default class SearchListStore extends Base {
   columns = []
   @observable.ref
   checkedKeys = ['key', 'num', 'name', 'price', 'varietiesData']
+  @observable
+  disabledKeys = ['key','num','name']
 
   constructor(data) {
     super()
@@ -51,9 +53,7 @@ export default class SearchListStore extends Base {
   @action
   columnsChange = checkedKeys => {
     this.checkedKeys = checkedKeys
-
     this.columns = columns(this.list,checkedKeys)
-    console.log(columns(this.list,checkedKeys))
   }
 
 

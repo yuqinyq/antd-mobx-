@@ -22,6 +22,7 @@ class TableList extends React.Component {
         columns={store.columns}
         dataSource={store.list}
         bordered
+        scroll={{ y: 240 }}
         loading={store.loading}
         rowSelection={rowSelection}
         pagination={{

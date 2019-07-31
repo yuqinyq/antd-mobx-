@@ -79,12 +79,30 @@ body {
 }
 
 /*美化webkit内核滚动条*/
-  ::-webkit-scrollbar {
-      width: 8px;
-      height: 8px;
-  }
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track,
 ::-webkit-scrollbar-thumb {
-    background-color: #777;
+  border-radius: 999px;
+  border: 3px solid transparent;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: 1px 1px 5px rgba(0,0,0,0) inset;
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: 20px;
+  background-clip: content-box;
+  box-shadow: 0 0 0 5px rgba(0,0,0,.2) inset;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
 }
 
 /*更改antd的primary button样式*/
@@ -92,3 +110,4 @@ body {
     background: #36bafb;
     border-color: #36bafb;
 }
+

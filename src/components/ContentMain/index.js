@@ -9,6 +9,8 @@ const Home = LoadableComponent(() => import('../../pages/Home/index'))  //参数
 // 表单组件Demo
 const EditTableList = LoadableComponent(() => import('../../pages/Table/EditTable'))
 const LookTableList = LoadableComponent(() => import('../../pages/Table/LookTable'))
+const TreeTableList = LoadableComponent(()=> import('../../pages/Table/TreeTable'))
+const RouterTableList = LoadableComponent(()=> import('../../pages/Table/RouterTable'))
 
 //基本组件Demo
 const ButtonDemo = LoadableComponent(() => import('../../pages/General/ButtonDemo/index'))
@@ -51,12 +53,14 @@ const About = LoadableComponent(() => import('../../pages/About/index'))
 class ContentMain extends React.Component {
   render() {
     return (
-      <div style={{ padding: 16, position: 'relative' }}>
+      <div className="qf-content-box">
         <Switch>
           <PrivateRoute exact path='/home' component={Home} />
 
           <PrivateRoute exact path='/home/table/edit' component={EditTableList} />
           <PrivateRoute exact path='/home/table/look' component={LookTableList} />
+          <PrivateRoute exact path='/home/table/tree' component={TreeTableList} />
+          <PrivateRoute exact path='/home/table/router' component={RouterTableList} />
 
           <PrivateRoute exact path='/home/general/button' component={ButtonDemo} />
           <PrivateRoute exact path='/home/general/icon' component={IconDemo} />

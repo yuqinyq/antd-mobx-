@@ -7,13 +7,16 @@ const menus = [
     title: '首页',
     icon: 'home',
     key: '/home'
-  },{
-    title:'表单组件',
-    icon:'table',
-    key:'/home/table',
-    subs:[
-      {key:'/home/table/edit',title:'表单编辑',icon:''},
-      {key:'/home/table/look',title:'表单查询',icon:''}
+  }, {
+    title: '表单组件',
+    icon: 'table',
+    key: '/home/table',
+    subs: [
+      { key: '/home/table/edit', title: '表单编辑', icon: '' },
+      { key: '/home/table/look', title: '表单查询', icon: '' },
+      { key: '/home/table/tree', title: '表单树形', icon: '' },
+      { key: '/home/table/router', title: '表单路由', icon: '' }
+
     ]
   },
   {

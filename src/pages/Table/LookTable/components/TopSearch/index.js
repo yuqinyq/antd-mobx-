@@ -2,7 +2,8 @@ import React from 'react'
 import { Input, Select, Button, Icon } from 'antd'
 import { observer } from 'mobx-react'
 import { DatePicker } from 'antd';
-import TreeColumns from './TreeColumns'
+import ColumnsChoose from '../../../../../components/ColumnsChoose'
+import { columnsAll } from '../columns'
 import './index.less'
 
 const { RangePicker } = DatePicker
@@ -14,7 +15,6 @@ class TopSearch extends React.Component {
 
   state = {
     expandForm: false,
-    rowShow: false
   }
 
   handleChange = (value) => {
@@ -40,7 +40,7 @@ class TopSearch extends React.Component {
   }
   render() {
     const { store } = this.props
-    const { expandForm, rowShow} = this.state
+    const { expandForm } = this.state
     return (
       <div className="qf-table-search">
         <div>
@@ -113,22 +113,7 @@ class TopSearch extends React.Component {
               </div>
             </div> : null}
         </div>
-        <div className="qf-row-btn"
-          onMouseEnter={() => {
-            this.setState({
-              rowShow: true
-            })
-          }}
-          onMouseLeave={() => {
-            this.setState({
-              rowShow: false
-            })
-          }}
-        >
-          <Button type="primary">列选择</Button>
-          <TreeColumns isShow={rowShow} store={store}/>
-        </div>
-
+        <ColumnsChoose store={store} columnsAll={columnsAll} />
       </div>)
   }
 }
