@@ -1,4 +1,5 @@
 import { enjambment, columnsChoose } from '../../../../../utils/list'
+import React from 'react'
 
 export const columns = (data, checkedKeys) => {
 
@@ -8,7 +9,7 @@ export const columns = (data, checkedKeys) => {
       title: '行号',
       dataIndex: 'key',
       key: 'key',
-      width:200,
+      width:100,
     }, {
       title: '商品编号',
       dataIndex: 'num',
@@ -136,6 +137,15 @@ export const columns = (data, checkedKeys) => {
           width:200,
         }
       ]
+    },{
+      title:'操作',
+      dataIndex:'action',
+      key:'action',
+      // fixed:'right',
+      width:100,
+      render:()=>{
+        return <span className="qf-edit-btn">编辑</span>
+      }
     }
   ]
 
@@ -205,6 +215,9 @@ export const columnsAll = [
         key: 'times',
       }
     ]
+  },{
+    title:'操作',
+    key:'action'
   }
 ]
 

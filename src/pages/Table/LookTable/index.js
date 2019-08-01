@@ -8,16 +8,16 @@ import './index.less';
 
 class LookTable extends React.Component {
 
-constructor(props){
-  super(props)
-  this.store = new SearchListStore()
-}
-  componentDidMount(){
-      this.store.fetchList({
-        pageNo:1,
-        pageSize:10,
-        keyword:''
-      })
+  constructor(props) {
+    super(props)
+    this.store = new SearchListStore()
+  }
+  componentDidMount() {
+    this.store.fetchList({
+      pageNo: 1,
+      pageSize: 10,
+      keyword: ''
+    })
   }
 
   render() {
@@ -26,7 +26,7 @@ constructor(props){
       <div>
         <CustomBreadcrumb arr={['表单查询']} />
         <div className="qf-table-look">
-          <TopSearch store={this.store}/>
+          <TopSearch store={this.store} />
           <TableList store={this.store} />
         </div>
       </div>

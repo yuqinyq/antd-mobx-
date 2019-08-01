@@ -21,9 +21,9 @@ export default class SearchListStore extends Base {
   @observable
   columns = []
   @observable.ref
-  checkedKeys = ['key', 'num', 'name', 'price', 'varietiesData']
+  checkedKeys = ['key', 'num', 'name', 'price', 'varietiesData','action']
   @observable
-  disabledKeys = ['key','num','name']
+  disabledKeys = ['key','num','name','action']
 
   constructor(data) {
     super()

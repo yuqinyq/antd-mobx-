@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-07-31 10:01:07
  * @LastEditors: yuqin
- * @LastEditTime: 2019-07-31 10:26:02
+ * @LastEditTime: 2019-08-01 16:37:50
  */
 
 
@@ -26,9 +26,10 @@ export function enjambment(data, name, key) {
  * 列选择关联方法
  * @param columusList columns列表
  * @param checkedKeys 选中的列选项
+ * @param num  显示列的个数大于多少固定最后一列
  * @returns {Array} 渲染出来的新列
  */
-export function columnsChoose(columusList, checkedKeys) {
+export function columnsChoose(columusList, checkedKeys,num) {
   let newColumns = []
   columusList.map((item) => {
     if (checkedKeys.indexOf(item.key) > -1) {
@@ -43,5 +44,8 @@ export function columnsChoose(columusList, checkedKeys) {
       })
     }
   })
+  if(checkedKeys.length > num){
+    newColumns[newColumns.length - 1].fixed = 'right'
+  }
   return newColumns
 }

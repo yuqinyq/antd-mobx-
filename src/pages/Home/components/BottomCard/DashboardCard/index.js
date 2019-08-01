@@ -7,10 +7,11 @@ class DashboardCard extends React.Component {
     return (
       <Card title="券核效率">
         <Gauge
-          title= {'跳出率'}
+          title={'跳出率'}
           height={180}
           percent={87}
-        /></Card>
+        />
+      </Card>
     )
   }
 }
