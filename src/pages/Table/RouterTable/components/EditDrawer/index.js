@@ -1,124 +1,42 @@
 import React from 'react'
-import { Drawer, Form, Button, Col, Row, Input, Select, DatePicker, Icon } from 'antd';
+import { Drawer, Button, Form, Input, Select, notification, } from 'antd';
+import { HotTable } from '@handsontable/react';
 
-const { Option } = Select;
+const { Option } = Select
 
 class EditDrawer extends React.Component {
 
-  // state = {
-  //   isEdit: false
-  // }
+  constructor(props) {
+    super(props);
+    this.data = [
+      ['', 'Tesla', 'Mercedes', 'Toyota', 'Volvo'],
+      ['2019', 10, 11, 12, 13],
+      ['2020', 20, 11, 14, 13],
+      ['2021', 30, 15, 12, 13]
+    ];
+  }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps) {
-  //     this.setState({
-  //       isEdit: nextProps.isEdit
-  //     })
-  //   }
-  // }
   render() {
-    const { data ,isEdit} = this.props
-    console.log(isEdit)
-    // const { isEdit } = this.state
-    // const { getFieldDecorator } = this.props.form;
+    const { data, isEidt } = this.props
+
     return (
       <Drawer
-        title={data.title}
-        width={720}
+        title={data.name}
+        width={600}
         onClose={this.props.onClose}
-        visible={isEdit}
+        visible={isEidt}
       >
-        {/* <Form layout="vertical" hideRequiredMark>
-          <Row gutter={16}>
-            <Col span={12}>
-              <Form.Item label="Name">
-                {getFieldDecorator('name', {
-                  rules: [{ required: true, message: 'Please enter user name' }],
-                })(<Input placeholder="Please enter user name" />)}
-              </Form.Item>
-            </Col>
-            <Col span={12}>
-              <Form.Item label="Url">
-                {getFieldDecorator('url', {
-                  rules: [{ required: true, message: 'Please enter url' }],
-                })(
-                  <Input
-                    style={{ width: '100%' }}
-                    addonBefore="http://"
-                    addonAfter=".com"
-                    placeholder="Please enter url"
-                  />,
-                )}
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row gutter={16}>
-            <Col span={12}>
-              <Form.Item label="Owner">
-                {getFieldDecorator('owner', {
-                  rules: [{ required: true, message: 'Please select an owner' }],
-                })(
-                  <Select placeholder="Please select an owner">
-                    <Option value="xiao">Xiaoxiao Fu</Option>
-                    <Option value="mao">Maomao Zhou</Option>
-                  </Select>,
-                )}
-              </Form.Item>
-            </Col>
-            <Col span={12}>
-              <Form.Item label="Type">
-                {getFieldDecorator('type', {
-                  rules: [{ required: true, message: 'Please choose the type' }],
-                })(
-                  <Select placeholder="Please choose the type">
-                    <Option value="private">Private</Option>
-                    <Option value="public">Public</Option>
-                  </Select>,
-                )}
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row gutter={16}>
-            <Col span={12}>
-              <Form.Item label="Approver">
-                {getFieldDecorator('approver', {
-                  rules: [{ required: true, message: 'Please choose the approver' }],
-                })(
-                  <Select placeholder="Please choose the approver">
-                    <Option value="jack">Jack Ma</Option>
-                    <Option value="tom">Tom Liu</Option>
-                  </Select>,
-                )}
-              </Form.Item>
-            </Col>
-            <Col span={12}>
-              <Form.Item label="DateTime">
-                {getFieldDecorator('dateTime', {
-                  rules: [{ required: true, message: 'Please choose the dateTime' }],
-                })(
-                  <DatePicker.RangePicker
-                    style={{ width: '100%' }}
-                    getPopupContainer={trigger => trigger.parentNode}
-                  />,
-                )}
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row gutter={16}>
-            <Col span={24}>
-              <Form.Item label="Description">
-                {getFieldDecorator('description', {
-                  rules: [
-                    {
-                      required: true,
-                      message: 'please enter url description',
-                    },
-                  ],
-                })(<Input.TextArea rows={4} placeholder="please enter url description" />)}
-              </Form.Item>
-            </Col>
-          </Row>
-        </Form>
+        <HotTable data={this.data} colHeaders={true} rowHeaders={true} width="500" height="300" />
+        <Form.Item label="药品名" required>
+          <Input style={{ width: '256px' }} defaultValue={data.name} />
+        </Form.Item>
+        <Form.Item label="类型" required>
+          <Select placeholder="请选择" defaultValue={data.type}>
+            <Option value="中成药">中成药</Option>
+            <Option value="中药">中药</Option>
+            <Option value="西药">西药</Option>
+          </Select>
+        </Form.Item>
         <div
           style={{
             position: 'absolute',
@@ -132,12 +50,14 @@ class EditDrawer extends React.Component {
           }}
         >
           <Button onClick={this.props.onClose} style={{ marginRight: 8 }}>
-            Cancel
+            取消
         </Button>
-          <Button onClick={this.props.onClose} type="primary">
-            Submit
+          <Button onClick={()=>{
+               notification.success({ message: '提示', description: '修改成功' })
+               this.props.onSubmit()}} type="primary">
+            确认
         </Button>
-        </div> */}123
+        </div>
       </Drawer>
     )
   }

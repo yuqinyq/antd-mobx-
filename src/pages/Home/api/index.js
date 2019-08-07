@@ -44,6 +44,7 @@ export const  TopListApi = (params)=> {
           list: Array(5)
             .fill(0)
             .map((item,idx)=> ({
+              key:Math.random(),
               index:idx+1,
               keyword: `搜索关键词-${idx}`,
               count: 234+idx,

@@ -11,6 +11,7 @@ const EditTableList = LoadableComponent(() => import('../../pages/Table/EditTabl
 const LookTableList = LoadableComponent(() => import('../../pages/Table/LookTable'))
 const TreeTableList = LoadableComponent(()=> import('../../pages/Table/TreeTable'))
 const RouterTableList = LoadableComponent(()=> import('../../pages/Table/RouterTable'))
+const RouterTableItem = LoadableComponent(()=> import ('../../pages/Table/RouterTable/Details'))
 
 //基本组件Demo
 const ButtonDemo = LoadableComponent(() => import('../../pages/General/ButtonDemo/index'))
@@ -61,6 +62,7 @@ class ContentMain extends React.Component {
           <PrivateRoute exact path='/home/table/look' component={LookTableList} />
           <PrivateRoute exact path='/home/table/tree' component={TreeTableList} />
           <PrivateRoute exact path='/home/table/router' component={RouterTableList} />
+          <PrivateRoute exact path='/home/table/router/item/:id' component={RouterTableItem} />
 
           <PrivateRoute exact path='/home/general/button' component={ButtonDemo} />
           <PrivateRoute exact path='/home/general/icon' component={IconDemo} />

@@ -46,7 +46,7 @@ $ yarn 或 npm install
 ├── .babelrc                 # babel转码文件
 ├── .editorconfig            # 帮助开发人员在不同的编辑器和IDE之间定义和维护一致的编码样式
 ├── .env.dev                 # 本地开发的环境变量
-├── .env.pro                 # 正式环境的环境变量
+├── .env.prod                 # 正式环境的环境变量
 ├── .env.test                # 测试环境的环境变量
 ├── .eslintignore            # 忽略不需要语法检测的文件
 ├── .eslintrc                # 定义代码检测规则配置
@@ -68,7 +68,7 @@ $ yarn 或 npm install
 
 - 开发环境`.env.dev`
 - 测试环境`.env.test`
-- 线上环境`.env.pro`
+- 线上环境`.env.prod`
 
 #### 使用环境变量
 

@@ -9,7 +9,7 @@ if ( process.env.NODE_ENV === 'development' ) {
   baseURL = 'http://tplatform.api.52meicang.com/' // 美仓测试
 } else {
   // 生产环境域名
-  baseURL = 'http://diaoqii.com/'
+  baseURL = 'http://tplatform.api.52meicang.com/'
 }
 
 let server = {

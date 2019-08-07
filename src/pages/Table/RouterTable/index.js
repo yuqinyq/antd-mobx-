@@ -1,15 +1,16 @@
 import React from 'react'
 import CustomBreadcrumb from 'components/CustomBreadcrumb'
-import { Table, notification, Modal } from 'antd'
+import { Table, notification, Modal} from 'antd'
 import ColumnsChoose from '../../../components/ColumnsChoose'
 import { columnsChoose } from '../../../utils/list'
 import { TableListApi } from './api'
 import EditDrawer from './components/EditDrawer'
+import {Link} from 'react-router-dom'
 import './index.less'
 
 const { confirm } = Modal
 
-export default class RouterTable extends React.Component {
+class RouterTable extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -37,6 +38,9 @@ export default class RouterTable extends React.Component {
         dataIndex: 'name',
         key: 'name',
         width: 200,
+        render:(text,data)=>{
+            return (<Link to={{pathname:`/home/table/router/item/${data.key}`,query:{name:text}}}>{text}</Link>)
+        }
       }, {
         title: '数量',
         dataIndex: 'count',
@@ -165,7 +169,17 @@ export default class RouterTable extends React.Component {
             }}
           />
         </div>
-        <EditDrawer onClose={this.onClose} isEidt={isEidt} data={currentData} />
+        <EditDrawer
+          onClose={this.onClose}
+          isEidt={isEidt}
+          data={currentData}
+          onSubmit={()=>{
+            this.onClose()
+            this.listInfo()
+          }}
+        />
       </div>)
   }
 }
+
+export default RouterTable

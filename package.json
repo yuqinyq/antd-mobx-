@@ -5,6 +5,7 @@
   "dependencies": {
     "@antv/data-set": "^0.8.9",
     "@babel/polyfill": "^7.2.5",
+    "@handsontable/react": "^3.0.0",
     "animate.css": "^3.6.1",
     "antd": "^3.5.4",
     "autoprefixer": "7.1.6",
@@ -33,6 +34,7 @@
     "file-loader": "1.1.5",
     "fs-extra": "3.0.1",
     "gsap": "^2.0.1",
+    "handsontable": "^7.1.0",
     "html-to-draftjs": "^1.4.0",
     "html-webpack-plugin": "2.29.0",
     "jest": "20.0.4",
@@ -68,13 +70,12 @@
   },
   "scripts": {
     "start": " cross-env NODE_QF=dev react-app-rewired --max_old_space_size=4096 start",
-    "build": "cross-env NODE_QF=pro react-app-rewired --max_old_space_size=4096 build",
+    "build": "cross-env NODE_QF=prod react-app-rewired --max_old_space_size=4096 build",
     "build-test": "cross-env NODE_QF=test react-app-rewired --max_old_space_size=4096 build",
     "prettier": "prettier \"src/**/*.{js,jsx}\" --write",
     "eslint": "eslint \"src/axios/**/*.{js,jsx}\" --quiet",
     "test": "react-app-rewired test --env=jsdom"
   },
-  "homepage": "打包后build存放地址",
   "devDependencies": {
     "babel-plugin-import": "^1.12.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.5",
