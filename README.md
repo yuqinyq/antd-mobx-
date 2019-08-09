@@ -1,3 +1,11 @@
+<!--
+ * @Descripttion: 
+ * @version: 
+ * @Author: yuqin
+ * @Date: 2019-07-17 14:03:56
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-08-09 10:38:35
+ -->
 ## scli-mobx-template
 
 基础的 mobx 模板，集成`mobx` + `mobx-react` + `react-router4` + `axios` + `antd`和相应的 webpack 配置
@@ -17,7 +25,7 @@ $ yarn 或 npm install
 - 编译到测试环境: `yarn build-test`
 - 编译到线上环境: `yarn build`
 
-打包后的 build 的存放目录在 package.json 的 homepage 中的配置
+打包后的 build 的存放远程目录在 package.json 的 homepage 中的配置
 
 ### 目录结构
 
