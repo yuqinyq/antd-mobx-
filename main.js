@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-09 16:40:16
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-09 16:46:25
+ * @LastEditTime: 2019-08-13 11:07:16
  */
 // 引入electron并创建一个Browserwindow
 const {app, BrowserWindow} = require('electron')
@@ -20,14 +20,14 @@ mainWindow = new BrowserWindow({width: 800, height: 600})
 
 
   //  * 加载应用-----  electron-quick-start中默认的加载入口
-    mainWindow.loadURL(url.format({
-      pathname: path.join(__dirname, './build/index.html'),
-      protocol: 'file:',
-      slashes: true
-    }))
+    // mainWindow.loadURL(url.format({
+    //   pathname: path.join(__dirname, './build/index.html'),
+    //   protocol: 'file:',
+    //   slashes: true
+    // }))
 
   // 加载应用----适用于 react 项目
-  // mainWindow.loadURL('http://localhost:3000/');
+  mainWindow.loadURL('http://localhost:3000/');
 
   // 打开开发者工具，默认不打开
   // mainWindow.webContents.openDevTools()

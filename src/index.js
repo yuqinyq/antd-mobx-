@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-07-18 16:56:40
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-09 15:01:08
+ * @LastEditTime: 2019-08-13 13:59:25
  */
 import '@babel/polyfill'
 import React from 'react';
@@ -22,6 +22,7 @@ import moment from 'moment';
 import 'moment/locale/zh-cn';
 
 moment.locale('zh-cn');
+console.log(window.location.href)
 //打包时，用的HashRouter并加上了basename，因为放在服务器的二级目录下
 ReactDOM.render(
   <HashRouter>

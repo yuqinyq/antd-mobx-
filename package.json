@@ -77,7 +77,8 @@
     "prettier": "prettier \"src/**/*.{js,jsx}\" --write",
     "eslint": "eslint \"src/axios/**/*.{js,jsx}\" --quiet",
     "test": "react-app-rewired test --env=jsdom",
-    "electron-start": "electron ."
+    "electron-start": "electron .",
+    "package": "electron-packager ./build/ antd-demo --win --out=release --arch=x64 --electron-version=1.4.13 --overwrite --icon=./favicon.ico"
   },
   "homepage": ".",
   "devDependencies": {
