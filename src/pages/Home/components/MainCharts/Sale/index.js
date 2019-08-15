@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: yuqin
+ * @Date: 2019-07-23 16:08:02
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-08-13 15:51:14
+ */
 import React from 'react'
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/bar'
@@ -74,7 +82,7 @@ class SaleList extends React.Component {
   render() {
     const data2 = this.state.data.data2 || []
     const link = data2.map(item => {
-      return <div className="qf-link-item">
+      return <div className="qf-link-item" key={item.key}>
         <span className={item.key < 3 ? 'qf-link-number' : ''} key={item.key}>{item.key + 1}</span>
         <span>{item.name}</span>
         <span>{item.price}</span>

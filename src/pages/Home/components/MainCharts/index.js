@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: yuqin
+ * @Date: 2019-07-22 17:11:00
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-08-13 15:50:07
+ */
 import React from 'react'
 import { Tabs, DatePicker } from 'antd';
 import { getRangeDate } from '../../../../utils/utils'

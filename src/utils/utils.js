@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: yuqin
+ * @Date: 2019-07-18 16:56:41
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-08-13 15:14:45
+ */
 import moment from 'moment'
 
 function accMul(arg1, arg2) {
@@ -104,3 +112,4 @@ export function getRangeDate(type) {
   }
   return obj
 }
+
