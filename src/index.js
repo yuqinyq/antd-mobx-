@@ -4,14 +4,13 @@
  * @Author: yuqin
  * @Date: 2019-07-18 16:56:40
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-14 10:31:46
+ * @LastEditTime: 2019-08-19 10:58:49
  */
 import '@babel/polyfill'
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './style/index.less';
 import '../node_modules/react-resizable/css/styles.css';
-import App from './App';
+import App from './pc/App';
 import Mobile from './mobile/App'
 import registerServiceWorker from './registerServiceWorker';
 import { BrowserRouter} from 'react-router-dom'

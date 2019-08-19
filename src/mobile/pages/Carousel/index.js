@@ -4,11 +4,11 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-15 17:17:16
+ * @LastEditTime: 2019-08-19 11:45:28
  */
 import React, { Component } from 'react'
 import { Carousel, Button, WhiteSpace, WingBlank, List } from 'antd-mobile';
-import NavBarHeader from '../../components/NavBarHeader'
+import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 

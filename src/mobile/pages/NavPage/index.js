@@ -4,12 +4,12 @@
  * @Author: yuqin
  * @Date: 2019-08-14 17:05:54
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-15 17:03:17
+ * @LastEditTime: 2019-08-19 11:43:30
  */
 import React, { Component } from 'react'
 import { Flex, WhiteSpace } from 'antd-mobile';
 import { Link } from 'react-router-dom'
-import NavBarHeader from '../../components/NavBarHeader'
+import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 

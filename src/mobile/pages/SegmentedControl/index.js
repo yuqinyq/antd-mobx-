@@ -4,11 +4,11 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-15 16:01:31
+ * @LastEditTime: 2019-08-19 11:45:04
  */
 import React, { Component } from 'react'
 import { SegmentedControl, WingBlank } from 'antd-mobile';
-import NavBarHeader from '../../components/NavBarHeader'
+import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 class App extends Component {

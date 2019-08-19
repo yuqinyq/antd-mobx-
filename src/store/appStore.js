@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: yuqin
+ * @Date: 2019-07-18 16:56:41
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-08-19 10:57:36
+ */
 import {observable, action} from 'mobx'
 import {isAuthenticated,authenticateSuccess,logout} from '../utils/Session'
 

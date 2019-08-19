@@ -4,13 +4,13 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-15 16:35:16
+ * @LastEditTime: 2019-08-19 11:45:19
  */
 import React, { Component } from 'react'
 import { List, Switch, Calendar } from 'antd-mobile';
 import enUS from 'antd-mobile/lib/calendar/locale/en_US';
 import zhCN from 'antd-mobile/lib/calendar/locale/zh_CN';
-import NavBarHeader from '../../components/NavBarHeader'
+import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 const extra = {

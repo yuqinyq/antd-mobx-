@@ -4,11 +4,11 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-15 16:15:00
+ * @LastEditTime: 2019-08-19 11:45:16
  */
 import React, { Component } from 'react'
 import { TabBar } from 'antd-mobile';
-import NavBarHeader from '../../components/NavBarHeader'
+import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 class App extends Component {

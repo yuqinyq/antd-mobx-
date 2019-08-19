@@ -4,14 +4,14 @@
  * @Author: yuqin
  * @Date: 2019-08-14 17:48:31
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-15 15:13:14
+ * @LastEditTime: 2019-08-19 11:43:32
  */
 import React, { Component } from 'react'
 import { Tooltip, Icon, Progress } from 'antd'
 import Gradient from './components/Gradient'
 import BarList from './components/BarList'
 import SaleType from './components/SaleType'
-import NavBarHeader from '../../components/NavBarHeader'
+import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 class Home extends Component {
