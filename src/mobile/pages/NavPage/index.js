@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-14 17:05:54
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-19 11:43:30
+ * @LastEditTime: 2019-08-20 11:13:54
  */
 import React, { Component } from 'react'
 import { Flex, WhiteSpace } from 'antd-mobile';
@@ -65,6 +65,15 @@ class Home extends Component {
             </Flex.Item>
             <Flex.Item>
               <NavItem to='/carousel' title='走马灯' />
+            </Flex.Item>
+          </Flex>
+          <WhiteSpace size="lg" />
+          <Flex>
+            <Flex.Item>
+              <NavItem to='/chartOne' title='报表一' />
+            </Flex.Item>
+            <Flex.Item>
+              <NavItem to='/chartTwo' title='报表二' />
             </Flex.Item>
           </Flex>
         </div>

@@ -1,0 +1,37 @@
+.chart-box {
+  width: 100%;
+
+  .chart-box-content {
+    width: 100%;
+    .ant-table-content{
+      border-style: none;
+      .ant-table-body{
+        margin: 0;
+      }
+    }
+
+    .chart-box-list {
+      width: 100%;
+      thead {
+        background-color: #108ee9;
+
+        span {
+          color: #fff;
+        }
+      }
+      tbody{
+        tr:nth-child(odd){
+          background-color: #d0dbe4;
+        }
+        tr:nth-child(even){
+          background-color: #abd2ef;
+        }
+      }
+      th,
+      td {
+        vertical-align: middle;
+        font-size: 0.13rem;
+      }
+    }
+  }
+}
