@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: yuqin
+ * @Date: 2019-07-24 10:10:15
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-08-22 10:19:34
+ */
 import React from 'react'
 import { Card, Menu, Dropdown, Radio } from 'antd'
 import echarts from 'echarts/lib/echarts';
@@ -39,9 +47,15 @@ class SaleType extends React.Component {
 
 
   pieInfo = () => {
-    const {type} = this.state
+    const { type } = this.state
     var myChart = echarts.init(document.getElementById('qfSalePie'));
     const option = {
+      grid: {
+        top: '0',
+        bottom: '0',
+        right: '0',
+        left: '0'
+      },
       tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)"
@@ -103,7 +117,9 @@ class SaleType extends React.Component {
     };
 
     myChart.setOption(option)
-
+    window.onresize = setTimeout(function () {
+      myChart.resize();
+    },200)
   }
   componentDidMount() {
     this.pieInfo()
@@ -111,7 +127,7 @@ class SaleType extends React.Component {
   handleChangeSalesType = (e) => {
     this.setState({
       type: e.target.value
-    },()=>{
+    }, () => {
       this.pieInfo()
     })
   }
@@ -137,13 +153,13 @@ class SaleType extends React.Component {
         <Radio.Group value={type} onChange={this.handleChangeSalesType}>
           <Radio.Button value="all">
             全部渠道
-            </Radio.Button>
+          </Radio.Button>
           <Radio.Button value="online">
             线上
-            </Radio.Button>
+          </Radio.Button>
           <Radio.Button value="stores">
             门店
-            </Radio.Button>
+          </Radio.Button>
         </Radio.Group>
       </div>
       <Dropdown overlay={menu} placement="bottomLeft">
@@ -154,7 +170,7 @@ class SaleType extends React.Component {
 
     return (
       <Card title="销售额类别占比" extra={more}>
-        <div id="qfSalePie" style={{ width: '100%', height: '300px' }}>
+        <div id="qfSalePie" style={{height: '300px' ,width:'500px'}}>
 
         </div>
       </Card>

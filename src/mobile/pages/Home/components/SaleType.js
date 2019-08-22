@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-15 11:46:25
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-15 13:50:55
+ * @LastEditTime: 2019-08-22 09:56:47
  */
 import React from 'react'
 import echarts from 'echarts/lib/echarts';
@@ -27,18 +27,24 @@ class SaleType extends React.Component {
   pieInfo = () => {
     var myChart = echarts.init(document.getElementById('qfSalePie'));
     const option = {
+      grid: {
+        top: '0',
+        bottom: '0',
+        right: '0',
+        left: '0'
+      },
       tooltip: {
         trigger: 'item',
         formatter: "{a} <br/>{b}: {c} ({d}%)"
       },
       color: ['#1890ff', '#13c2c2', '#2fc25b', '#facc14', '#f04864'],
-      title: {//标题组件
-        text: '销售额',
-        textStyle: {
-          color: "rgba(0,0,0,.65)",
-          fontSize: "14"
-        }
-      },
+      // title: {//标题组件
+      //   text: '销售额',
+      //   textStyle: {
+      //     color: "rgba(0,0,0,.65)",
+      //     fontSize: "14"
+      //   }
+      // },
       series: [
         {
           name: '销售额',
@@ -75,16 +81,16 @@ class SaleType extends React.Component {
     };
 
     myChart.setOption(option)
-    window.onresize = function () {
+    window.onresize = setTimeout(function () {
       myChart.resize();
-    }
+    },200)
   }
   componentDidMount() {
     this.pieInfo()
   }
   render() {
     return (
-      <div id="qfSalePie" style={{ height: '1.5rem' }}></div>
+      <div id="qfSalePie" style={{ height: '1.5rem',width:'100%' }}></div>
     )
 
   }

@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: yuqin
+ * @Date: 2019-07-24 10:43:29
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-08-22 10:21:14
+ */
 import React from 'react'
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/line';
@@ -32,10 +40,10 @@ class TopSale extends React.Component {
     var myChart = echarts.init(document.getElementById(id));
     const option = {
       grid: {
-        x: 0,
-        x2: 0,
-        y: 0,
-        y2: 0
+        top: '0',
+        bottom: '0',
+        right: '0',
+        left: '0'
       },
       tooltip: {
         trigger: 'axis',//鼠标经过提示
@@ -76,11 +84,14 @@ class TopSale extends React.Component {
       ]
     }
     myChart.setOption(option)
+    window.onresize = setTimeout(function () {
+      myChart.resize();
+    },200)
 
   }
   render() {
     const { id } = this.props
-    return <div id={id} style={{ width: '100%', height: '50px' }} />
+    return <div id={id} style={{ width: '248px', height: '50px' }} />
 
   }
 }

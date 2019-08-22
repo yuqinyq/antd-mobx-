@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: yuqin
+ * @Date: 2019-07-23 15:57:35
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-08-22 10:12:51
+ */
 import React from 'react'
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/bar'
@@ -29,10 +37,10 @@ class BarList extends React.Component {
     var myChart = echarts.init(document.getElementById('barlist'));
     const option = {
       grid: {
-        x: 0,
-        x2: 0,
-        y: 0,
-        y2: 0
+        top: '0',
+        bottom: '0',
+        right: '0',
+        left: '0'
       },
       tooltip: {
         trigger: 'axis',//鼠标经过提示
@@ -73,11 +81,14 @@ class BarList extends React.Component {
       ]
     }
     myChart.setOption(option)
+    window.onresize = setTimeout(function () {
+      myChart.resize();
+    },200)
 
   }
   render() {
 
-    return <div id='barlist' style={{ width: '100%', height: '50px' }} />
+    return <div id='barlist' style={{ width:'222px'  , height: '50px' }} />
 
   }
 }

@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-15 11:08:41
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-20 15:39:15
+ * @LastEditTime: 2019-08-22 09:57:41
  */
 import React from 'react'
 import echarts from 'echarts/lib/echarts';
@@ -94,9 +94,9 @@ class Gradient extends React.Component {
       ]
     }
     myChart.setOption(option)
-    window.onresize = function () {
+    window.onresize = setTimeout(function () {
       myChart.resize();
-    }
+    },200)
   }
   render() {
 

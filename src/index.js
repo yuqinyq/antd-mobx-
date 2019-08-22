@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-07-18 16:56:40
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-19 10:58:49
+ * @LastEditTime: 2019-08-21 15:04:21
  */
 import '@babel/polyfill'
 import React from 'react';
@@ -13,7 +13,7 @@ import '../node_modules/react-resizable/css/styles.css';
 import App from './pc/App';
 import Mobile from './mobile/App'
 import registerServiceWorker from './registerServiceWorker';
-import { BrowserRouter} from 'react-router-dom'
+import { HashRouter as Router} from 'react-router-dom'
 import { Provider } from 'mobx-react'
 import { LocaleProvider } from 'antd'
 import zh_CN from 'antd/lib/locale-provider/zh_CN'
@@ -32,13 +32,13 @@ class Root extends React.Component {
     const {navigatorStore} = store
     //打包时，用的HashRouter并加上了basename，因为放在服务器的二级目录下
     return (
-      <BrowserRouter>
+      <Router>
         <LocaleProvider locale={zh_CN}>
           <Provider {...store}>
             {navigatorStore.isMobile ? <Mobile /> : <App />}
           </Provider>
         </LocaleProvider>
-      </BrowserRouter>
+      </Router>
     )
   }
 }
