@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-23 16:34:27
+ * @LastEditTime: 2019-08-23 17:34:40
  */
 import React, { Component } from 'react'
 import { NavBar, Icon as Iconm } from 'antd-mobile';
@@ -51,9 +51,9 @@ class App extends Component {
           ]}
         >{itemData.name}</NavBar>
         <div className="qf-chart-three-main">
-          {/* <Sale /> */}
-          {/* <SaleDetail /> */}
-          <GetTarget />
+          {itemData.name === '每日销售' ?
+            <Sale /> : itemData.name === '销售明细' ?
+              <SaleDetail /> : <GetTarget />}
         </div>
         <div className="qf-chart-footer">
           {footerIcon}
