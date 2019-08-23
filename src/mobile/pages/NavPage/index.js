@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-14 17:05:54
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-20 11:13:54
+ * @LastEditTime: 2019-08-22 14:22:25
  */
 import React, { Component } from 'react'
 import { Flex, WhiteSpace } from 'antd-mobile';
@@ -74,6 +74,9 @@ class Home extends Component {
             </Flex.Item>
             <Flex.Item>
               <NavItem to='/chartTwo' title='报表二' />
+            </Flex.Item>
+            <Flex.Item>
+              <NavItem to='/chartThree' title='报表三' />
             </Flex.Item>
           </Flex>
         </div>

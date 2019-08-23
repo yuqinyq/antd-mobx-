@@ -1,0 +1,167 @@
+.qf-chart-three {
+  height: 100%;
+  width: 100%;
+
+  .am-navbar-light {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
+
+  .qf-chart-footer {
+    position: fixed;
+    bottom: 0;
+    height: 0.6rem;
+    width: 100%;
+    color: #fff;
+    display: flex;
+
+    .qf-footer-item {
+      .anticon {
+        font-size: 0.2rem;
+      }
+
+      width: calc(~"100% / 3");
+      background-color: #4a4d4c;
+      border-right: 1px solid #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &:last-child {
+        border-style: none;
+      }
+    }
+
+    .qf-footer-active {
+      background-color: #ed7a39;
+    }
+  }
+
+  .qf-chart-three-main {
+    width: 100%;
+    position: absolute;
+    top: 0.45rem;
+    margin-bottom: 0.6rem;
+    overflow-y: auto;
+  }
+}
+
+.qf-sale-title {
+  width: 100%;
+  line-height: 0.36rem;
+  font-size: 0.16rem;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.qf-chart-three-sale {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  .qf-sale-card {
+    width: calc(~"50% - 0.5px");
+    background-color: #fff;
+
+    .qf-sale-card-title {
+      display: block;
+      .qf-sale-title
+    }
+
+    &:nth-child(odd) {
+      .qf-sale-card-title {
+        background-color: rgb(232, 242, 198);
+      }
+    }
+
+    &:nth-child(even) {
+      .qf-sale-card-title {
+        background-color: rgb(208, 226, 242);
+      }
+    }
+
+    .qf-sale-card-item {
+      height: 0.63rem;
+      display: flex;
+      justify-content: center;
+      align-items: baseline;
+      line-height: 0.63rem;
+
+      span {
+        color: rgb(19, 124, 208);
+        font-size: 30px;
+        margin-right: 0.05rem;
+      }
+    }
+
+    .qf-sale-progress {
+      padding: 0.1rem 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.qf-sale-details {
+  width: 100%;
+
+  #detailsBar {
+    background-color: #fff;
+  }
+
+  .chart-detail-list {
+
+    th,
+    td {
+      vertical-align: middle;
+    }
+
+    td {
+
+      font-size: 0.12rem;
+    }
+
+    thead {
+      background-color: #fafbfc;
+    }
+
+    tbody {
+      tr:nth-child(odd) {
+        background-color: #fff;
+      }
+
+      tr:nth-child(even) {
+        background-color: #fafbfc;
+      }
+    }
+
+    .ant-progress-outer {
+      padding-right: 0;
+      margin-right: 0;
+    }
+
+    .ant-progress-bg,.ant-progress-inner {
+      border-radius: 0 !important;
+
+    }
+
+    .ant-progress-text {
+      position: absolute;
+      left: 0;
+      font-size: 0.12rem;
+      top: 0.05rem;
+      color: #000;
+    }
+  }
+}
+
+.qf-chart-target{
+  width: 100%;
+  #chartTarget,#barTarget{
+    background-color: #fff;
+  }
+}

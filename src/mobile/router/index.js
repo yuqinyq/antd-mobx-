@@ -4,10 +4,10 @@
  * @Author: yuqin
  * @Date: 2019-08-14 16:07:39
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-20 11:12:23
+ * @LastEditTime: 2019-08-22 14:23:15
  */
 import React, { Component } from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import LoadableComponent from '../../utils/LoadableComponent'
 
 
@@ -24,12 +24,14 @@ const InputItem = LoadableComponent(() => import('../pages/InputItem/index'))
 const Carousel = LoadableComponent(() => import('../pages/Carousel/index'))
 const ChartOne = LoadableComponent(() => import('../pages/ChartOne/index'))
 const ChartTwo = LoadableComponent(() => import('../pages/ChartTwo/index'))
+const ChartThree = LoadableComponent(() => import('../pages/ChartThree/index'))
 
 class Router extends Component {
 
   render() {
     return (
       <Switch>
+        <Redirect exact from='/' to='/home' />
         <Route path='/navPage' component={NavPage} />
         <Route path='/home' component={Home} />
         <Route path='/drawer' component={Drawer} />
@@ -43,6 +45,7 @@ class Router extends Component {
         <Route path='/carousel' component={Carousel} />
         <Route path='/chartOne' component={ChartOne} />
         <Route path='/chartTwo' component={ChartTwo} />
+        <Route path='/chartThree' component={ChartThree} />
       </Switch>
     )
   }
