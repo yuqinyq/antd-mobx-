@@ -7,6 +7,8 @@
     "@antv/data-set": "^0.8.9",
     "@babel/polyfill": "^7.2.5",
     "@handsontable/react": "^3.0.0",
+    "ag-grid-enterprise": "^21.1.1",
+    "ag-grid-react": "^21.1.0",
     "animate.css": "^3.6.1",
     "antd": "^3.5.4",
     "antd-mobile": "^2.2.14",

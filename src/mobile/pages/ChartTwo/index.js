@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-20 16:39:51
+ * @LastEditTime: 2019-08-26 17:05:16
  */
 import React, { Component } from 'react'
 import { NavBar } from 'antd-mobile';
@@ -70,7 +70,7 @@ class App extends Component {
             {type === 'file-search' ? <Line /> : type === 'team' ? <Card /> : <Pie />}
           </div>
         </div>
-        <div className="qf-chart-footer">
+        <div className="qf-chartTwo-footer">
           {footer}
         </div>
       </div>

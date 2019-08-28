@@ -1,12 +1,20 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: yuqin
+ * @Date: 2019-07-18 16:56:40
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-08-27 16:06:01
+ */
 import React from 'react'
 import { Icon, Badge, Dropdown, Menu, Modal } from 'antd'
 import screenfull from 'screenfull'
 import { inject, observer } from 'mobx-react'
 import { Link, withRouter } from 'react-router-dom'
-import { isAuthenticated } from '../../utils/Session'
+import { isAuthenticated } from '../../utils/LoginInfo'
 
 //withRouter一定要写在前面，不然路由变化不会反映到props中去
-@withRouter @inject('appStore') @observer
+@withRouter @inject('loginStore') @observer
 class HeaderBar extends React.Component {
   state = {
     icon: 'arrows-alt',
@@ -36,13 +44,13 @@ class HeaderBar extends React.Component {
     }
   }
   logout = () => {
-    this.props.appStore.toggleLogin(false)
+    this.props.loginStore.toggleLogin(false)
     this.props.history.push(this.props.location.pathname)
   }
 
   render() {
     const { icon, count, visible, avatar } = this.state
-    const { appStore, collapsed, location } = this.props
+    const { loginStore, collapsed, location } = this.props
     const notLogin = (
       <div>
         <Link to={{ pathname: '/login', state: { from: location } }} style={{ color: 'rgba(0, 0, 0, 0.65)' }}>登录</Link>&nbsp;
@@ -79,12 +87,12 @@ class HeaderBar extends React.Component {
           <ul className='header-ul'>
             <li><Icon type={icon} onClick={this.screenfullToggle} /></li>
             <li onClick={() => this.setState({ count: 0 })}>
-              <Badge count={appStore.isLogin ? count : 0} overflowCount={99} style={{ marginRight: -17 }}>
+              <Badge count={loginStore.isLogin ? count : 0} overflowCount={99} style={{ marginRight: -17 }}>
                 <Icon type="notification" />
               </Badge>
             </li>
             <li>
-              {appStore.isLogin ? login : notLogin}
+              {loginStore.isLogin ? login : notLogin}
             </li>
           </ul>
         </div>

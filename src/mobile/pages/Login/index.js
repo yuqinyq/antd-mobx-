@@ -4,13 +4,17 @@
  * @Author: yuqin
  * @Date: 2019-08-14 10:39:54
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-14 17:20:54
+ * @LastEditTime: 2019-08-27 16:17:38
  */
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom'
+import { inject, observer } from 'mobx-react/index'
 import { Form, Icon, Input, Button, Checkbox } from 'antd';
 import { Toast } from 'antd-mobile'
 import './index.less'
 
+
+@withRouter @inject('loginStore') @observer
 class Login extends Component {
 
   handleSubmit = e => {
@@ -19,9 +23,9 @@ class Login extends Component {
       if (!err) {
         if (values.username === 'admin' && values.password === '123456') {
           const data = JSON.stringify(values);
+          this.props.loginStore.toggleLogin(true, data)
           Toast.success('登录成功')
           this.props.history.replace("navPage");
-          localStorage.setItem("qfLoginInfo", data);
         } else {
           Toast.fail('用户名或密码错误')
         }
@@ -61,9 +65,9 @@ class Login extends Component {
               valuePropName: 'checked',
               initialValue: true,
             })(<Checkbox>记住我</Checkbox>)}
-            <a className="login-form-forgot" href="">
+            {/* <a className="login-form-forgot" href="">
               忘记密码
-            </a>
+            </a> */}
             <Button type="primary" htmlType="submit" className="login-form-button">
               登录
           </Button>

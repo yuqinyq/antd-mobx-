@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-14 09:55:16
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-14 10:04:38
+ * @LastEditTime: 2019-08-27 13:57:32
  */
 import { observable, action } from 'mobx'
 
@@ -16,25 +16,16 @@ class NavigatorStore {
 
   @action judgeNavigator() {
     // 判断是否是移动端设备
-    let browser = {
-      versions: function () {
-        let u = navigator.userAgent;
-        return {
-          trident: u.indexOf('Trident') > -1, //IE内核
-          presto: u.indexOf('Presto') > -1, //opera内核
-          webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
-          gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1,//火狐内核
-          mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
-          ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
-          android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
-          iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器
-          iPad: u.indexOf('iPad') > -1, //是否iPad
-          webApp: u.indexOf('Safari') == -1 //是否web应该程序，没有头部与底部
-        };
-      }(),
-      language: (navigator.browserLanguage || navigator.language).toLowerCase()//检测浏览器语言
-    }
-    if (browser.versions.mobile || browser.versions.android || browser.versions.ios) {
+    let sUserAgent = navigator.userAgent.toLowerCase();
+    let bIsIpad = sUserAgent.match(/ipad/i) == "ipad";
+    let bIsIphoneOs = sUserAgent.match(/iphone os/i) == "iphone os";
+    let bIsMidp = sUserAgent.match(/midp/i) == "midp";
+    let bIsUc7 = sUserAgent.match(/rv:1.2.3.4/i) == "rv:1.2.3.4";
+    let bIsUc = sUserAgent.match(/ucweb/i) == "ucweb";
+    let bIsAndroid = sUserAgent.match(/android/i) == "android";
+    let bIsCE = sUserAgent.match(/windows ce/i) == "windows ce";
+    let bIsWM = sUserAgent.match(/windows mobile/i) == "windows mobile";
+    if (bIsIpad || bIsIphoneOs || bIsMidp || bIsUc7 || bIsUc || bIsAndroid || bIsCE || bIsWM) {
       this.isMobile = true
     } else {
       this.isMobile = false

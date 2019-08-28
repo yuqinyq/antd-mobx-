@@ -4,15 +4,18 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:47:59
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-15 16:02:13
+ * @LastEditTime: 2019-08-27 16:19:31
  */
 import React, { Component } from 'react'
 import { NavBar, Icon, Popover } from 'antd-mobile'
-import {withRouter} from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
+import { inject, observer } from 'mobx-react'
 const Item = Popover.Item;
 
 const myImg = src => <img src={`https://gw.alipayobjects.com/zos/rmsportal/${src}.svg`}
   className="am-icon am-icon-xs" alt="" />;
+
+@withRouter @inject('loginStore') @observer
 class NavBarHeader extends Component {
   state = {
     visible: false,
@@ -47,9 +50,9 @@ class NavBarHeader extends Component {
               (<Item key="4" value="scan" icon={myImg('tOtXhkIWzwotgGSeptou')} data-seed="logId">扫一扫</Item>),
               (<Item key="5" value="special" icon={myImg('PKAgAqZWJVNwKsAJSmXd')} style={{ whiteSpace: 'nowrap' }}>我的二维码</Item>),
               (<Item key="6" value="button ct" icon={myImg('uQIYTFeRrjPELImDRrPt')}>
-                <span style={{ marginRight: 5 }} onClick={()=>{
-                  this.props.history.replace("login");
-                  localStorage.clear()
+                <span style={{ marginRight: 5 }} onClick={() => {
+                  this.props.loginStore.toggleLogin(false)
+                  this.props.history.push(this.props.location.pathname)
                 }}>退出登录</span>
               </Item>),
             ]}

@@ -1,16 +1,16 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: yuqin
+ * @Date: 2019-07-18 16:56:41
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-08-27 14:13:43
+ */
 import http from 'axios'
 import { message, notification } from 'antd';
 import { formatParams } from './utils'
 
-let baseURL = ''
-if ( process.env.NODE_ENV === 'development' ) {
-  // baseURL = 'https://easy-mock.com/mock/5cf60786be427a521b0ac947/reactapi/' // 模拟数据
-  // baseURL = 'https://randomuser.me/' // 默认
-  baseURL = 'http://tplatform.api.52meicang.com/' // 美仓测试
-} else {
-  // 生产环境域名
-  baseURL = 'http://tplatform.api.52meicang.com/'
-}
+let baseURL = 'http://tplatform.api.52meicang.com/'
 
 let server = {
   init: () => {
@@ -18,7 +18,7 @@ let server = {
       config => {
         config.url = baseURL + config.url
         if (config.method === 'post') {
-            config.data = formatParams(config.data)
+          config.data = formatParams(config.data)
         } else {
           // 导出 get
           config.params.token = JSON.parse(localStorage.loginInfor).infor.token
@@ -45,7 +45,7 @@ let server = {
         } else if (response.data.errorCode !== '0') {
           notification.open({
             message: '提示',
-            description:response.data.msg
+            description: response.data.msg
           })
         }
       }
