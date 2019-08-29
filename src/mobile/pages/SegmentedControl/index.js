@@ -4,11 +4,10 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-19 11:45:04
+ * @LastEditTime: 2019-08-29 14:50:50
  */
 import React, { Component } from 'react'
 import { SegmentedControl, WingBlank } from 'antd-mobile';
-import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 class App extends Component {
@@ -21,9 +20,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBarHeader title="分段器" cb={() => {
-          this.props.history.replace("navPage");
-        }} />
         <WingBlank size="lg" className="sc-example">
           <p className="sub-title">Simplest</p>
           <SegmentedControl values={['Segment1', 'Segment2']} />

@@ -4,11 +4,10 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-19 11:44:56
+ * @LastEditTime: 2019-08-29 14:50:21
  */
 import React, { Component } from 'react'
 import { Pagination, Icon } from 'antd-mobile';
-import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 const locale = {
@@ -20,10 +19,6 @@ const locale = {
 class App extends Component {
   render() {
     return (
-      <div>
-        <NavBarHeader title="分页器" cb={() => {
-          this.props.history.replace("navPage");
-        }} />
         <div className="pagination-container" >
           <p className="sub-title">Button with text</p>
           <Pagination total={5} current={1} locale={locale} />
@@ -47,7 +42,6 @@ class App extends Component {
           <p className="sub-title">Point style</p>
           <Pagination mode="pointer" total={5} current={2} style={{ marginBottom: '16px' }} />
         </div>
-      </div>
     )
   }
 }

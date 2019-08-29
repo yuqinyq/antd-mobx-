@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-27 16:34:38
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-28 11:19:28
+ * @LastEditTime: 2019-08-29 14:14:01
  */
 export const MenusDataApi = (params) => {
   return new Promise(resolve => {
@@ -16,8 +16,12 @@ export const MenusDataApi = (params) => {
           {
             title: '首页',
             icon: 'home',
-            key: '/home'
-          }, {
+            key: '/home',
+            subs: [
+              { key: '/home/main', title: '主页', icon: '' },
+            ]
+          },
+          {
             title: '表单组件',
             icon: 'table',
             key: '/home/table',
@@ -52,15 +56,8 @@ export const MenusDataApi = (params) => {
             icon: 'edit',
             key: '/home/entry',
             subs: [
-              {
-                key: '/home/entry/form',
-                title: '表单',
-                icon: '',
-                subs: [
-                  { key: '/home/entry/form/basic-form', title: '基础表单', icon: '' },
-                  { key: '/home/entry/form/step-form', title: '分步表单', icon: '' }
-                ]
-              },
+              { key: '/home/entry/form/basic-form', title: '基础表单', icon: '' },
+              { key: '/home/entry/form/step-form', title: '分步表单', icon: '' },
               { key: '/home/entry/upload', title: '上传', icon: '' },
             ]
           },
@@ -103,6 +100,66 @@ export const MenusDataApi = (params) => {
             title: '个人信息',
             icon: 'info-circle-o',
             key: '/home/about'
+          },
+          {
+            title: 'antd-mobile组件',
+            icon: '',
+            key: '/home/antd',
+            subs: [
+              {
+                title: '抽屉',
+                icon: '',
+                key: '/home/antd/drawer',
+              },
+              {
+                title: '分页器',
+                icon: '',
+                key: '/home/antd/pagination',
+              }, {
+                title: '分段器',
+                icon: '',
+                key: '/home/antd/segmentedControl',
+              }, {
+                title: '标签页',
+                icon: '',
+                key: '/home/antd/tabs',
+              }, {
+                title: '标签栏',
+                icon: '',
+                key: '/home/antd/tabBar',
+              }, {
+                title: '日历',
+                icon: '',
+                key: '/home/antd/calendar',
+              }, {
+                title: '文本输入',
+                icon: '',
+                key: '/home/antd/inputItem',
+              }, {
+                title: '走马灯',
+                icon: '',
+                key: '/home/antd/carousel',
+              },
+            ]
+          }, {
+            title: '报表示例',
+            icon: '',
+            key: '/home/chart',
+            subs: [
+              {
+                title: '报表一',
+                icon: '',
+                key: '/home/chart/one',
+              }, {
+                title: '报表二',
+                icon: '',
+                key: '/home/chart/two',
+              }, {
+                title: '报表三',
+                icon: '',
+                key: '/home/chart/three',
+              }
+            ]
           }
         ]
       })

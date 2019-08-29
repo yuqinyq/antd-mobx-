@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-27 16:56:53
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-28 10:57:24
+ * @LastEditTime: 2019-08-28 17:50:03
  */
 export const menus = [
   {
@@ -46,15 +46,8 @@ export const menus = [
     icon: 'edit',
     key: '/home/entry',
     subs: [
-      {
-        key: '/home/entry/form',
-        title: '表单',
-        icon: '',
-        subs: [
-          { key: '/home/entry/form/basic-form', title: '基础表单', icon: '' },
-          { key: '/home/entry/form/step-form', title: '分步表单', icon: '' }
-        ]
-      },
+      { key: '/home/entry/form/basic-form', title: '基础表单', icon: '' },
+      { key: '/home/entry/form/step-form', title: '分步表单', icon: '' },
       { key: '/home/entry/upload', title: '上传', icon: '' },
     ]
   },

@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-14 10:39:54
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-27 16:17:38
+ * @LastEditTime: 2019-08-29 16:00:00
  */
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom'
@@ -25,7 +25,7 @@ class Login extends Component {
           const data = JSON.stringify(values);
           this.props.loginStore.toggleLogin(true, data)
           Toast.success('登录成功')
-          this.props.history.replace("navPage");
+          this.props.history.replace("home");
         } else {
           Toast.fail('用户名或密码错误')
         }
@@ -42,21 +42,25 @@ class Login extends Component {
           <Form.Item>
             {getFieldDecorator('username', {
               rules: [{ required: true, message: '请填写您的用户名!' }],
+              initialValue:'admin'
             })(
               <Input
                 prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
                 placeholder="用户名"
+                defaultValue='admin'
               />,
             )}
           </Form.Item>
           <Form.Item>
             {getFieldDecorator('password', {
               rules: [{ required: true, message: '请填写您的密码！' }],
+              initialValue:'123456'
             })(
               <Input
                 prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
                 type="password"
                 placeholder="密码"
+                defaultValue='123456'
               />,
             )}
           </Form.Item>

@@ -1,9 +1,0 @@
-{
-  "name":"antd",
-  "version":"1.0-test",
-  "main":"main.js",
-  "author": {
-      "name":"YOURNAME"
-  },
-  "license": "MIT"
-}

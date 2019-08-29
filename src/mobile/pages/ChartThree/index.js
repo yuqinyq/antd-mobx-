@@ -4,10 +4,9 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-23 17:34:40
+ * @LastEditTime: 2019-08-29 14:58:00
  */
 import React, { Component } from 'react'
-import { NavBar, Icon as Iconm } from 'antd-mobile';
 import { Icon } from 'antd'
 import Sale from './component/Sale'
 import SaleDetail from './component/SaleDetail'
@@ -42,14 +41,6 @@ class App extends Component {
     return (
 
       <div className="qf-chart-three">
-        <NavBar
-          mode="light"
-          icon={<Iconm type="left" />}
-          onLeftClick={() => { this.props.history.replace("navPage") }}
-          rightContent={[
-            <Iconm key="1" type="ellipsis" />
-          ]}
-        >{itemData.name}</NavBar>
         <div className="qf-chart-three-main">
           {itemData.name === '每日销售' ?
             <Sale /> : itemData.name === '销售明细' ?

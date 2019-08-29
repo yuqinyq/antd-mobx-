@@ -4,14 +4,13 @@
  * @Author: yuqin
  * @Date: 2019-08-14 17:48:31
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-19 11:43:32
+ * @LastEditTime: 2019-08-29 14:41:24
  */
 import React, { Component } from 'react'
 import { Tooltip, Icon, Progress } from 'antd'
 import Gradient from './components/Gradient'
 import BarList from './components/BarList'
 import SaleType from './components/SaleType'
-import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 class Home extends Component {
@@ -50,9 +49,6 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <NavBarHeader title="首页" cb={()=>{
-             this.props.history.replace("navPage");
-        }}/>
         <div className="qf-mobile-home padding-top-20">
           <div className="qf-home-item">
             {this.cardTitle('总销售额')}

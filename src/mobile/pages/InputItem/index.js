@@ -4,12 +4,11 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-19 11:45:23
+ * @LastEditTime: 2019-08-29 14:54:39
  */
 import React, { Component } from 'react'
 import { List, InputItem, WhiteSpace, Toast } from 'antd-mobile';
 import { createForm } from 'rc-form';
-import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 // 通过自定义 moneyKeyboardWrapProps 修复虚拟键盘滚动穿透问题
@@ -57,10 +56,6 @@ class App extends Component {
     const { getFieldProps } = this.props.form;
     const { type } = this.state;
     return (
-      <div>
-        <NavBarHeader title="文本输入" cb={() => {
-          this.props.history.replace("navPage");
-        }} />
         <div>
           <List renderHeader={() => '键盘输入金额'}>
             <InputItem
@@ -250,7 +245,6 @@ class App extends Component {
           </List>
           <WhiteSpace />
         </div>
-      </div>
     );
   }
 }

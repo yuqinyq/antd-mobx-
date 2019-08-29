@@ -4,11 +4,10 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-19 11:45:28
+ * @LastEditTime: 2019-08-29 14:55:10
  */
 import React, { Component } from 'react'
 import { Carousel, Button, WhiteSpace, WingBlank, List } from 'antd-mobile';
-import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 
@@ -38,9 +37,6 @@ class App extends Component {
   render() {
     return (
       <div>
-        <NavBarHeader title="走马灯" cb={() => {
-          this.props.history.replace("navPage");
-        }} />
         <List renderHeader={() => '基本'}>
           <WingBlank className="padding-top-20">
             <Carousel

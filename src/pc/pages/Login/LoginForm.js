@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-07-19 11:22:41
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-27 15:52:14
+ * @LastEditTime: 2019-08-29 15:59:38
  */
 import React from 'react'
 import { calculateWidth } from '../../../utils/utils'
@@ -52,7 +52,8 @@ class LoginForm extends React.Component {
           <Form.Item help={getFieldError('username') &&
             <PromptBox info={getFieldError('username')} width={calculateWidth(getFieldError('username'))} />}>
             {getFieldDecorator('username', {
-              rules: [{ required: true, message: '请输入用户名' }]
+              rules: [{ required: true, message: '请输入用户名' }],
+              initialValue: 'admin'
             })(
               <Input
                 onFocus={() => this.setState({ focusItem: 0 })}
@@ -65,7 +66,7 @@ class LoginForm extends React.Component {
           <Form.Item help={getFieldError('password') &&
             <PromptBox info={getFieldError('password')} width={calculateWidth(getFieldError('password'))} />}>
             {getFieldDecorator('password', {
-              rules: [{ required: true, message: '请输入密码' }]
+              rules: [{ required: true, message: '请输入密码' }], initialValue: '123456'
             })(
               <Input
                 onFocus={() => this.setState({ focusItem: 1 })}
@@ -73,6 +74,7 @@ class LoginForm extends React.Component {
                 type='password'
                 maxLength={16}
                 placeholder='密码'
+                value='123456'
                 addonBefore={<span className='iconfont icon-suo1' style={focusItem === 1 ? styles.focus : {}} />} />
             )}
           </Form.Item>

@@ -4,11 +4,10 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-20 16:48:13
+ * @LastEditTime: 2019-08-29 14:56:39
  */
 import React, { Component } from 'react'
 import { Table } from 'antd'
-import NavBarHeader from '../../../components/NavBarHeader'
 import echarts from 'echarts/lib/echarts';
 import 'echarts/lib/chart/bar'
 import 'echarts/lib/chart/line';
@@ -210,9 +209,6 @@ class App extends Component {
     const { data } = this.state
     return (
       <div className="chart-box">
-        <NavBarHeader title="报表一" cb={() => {
-          this.props.history.replace("navPage");
-        }} />
         <div className="chart-box-content">
           <div id='chartOne' style={{ height: '3rem' }} />
           <Table

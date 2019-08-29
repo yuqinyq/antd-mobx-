@@ -4,11 +4,10 @@
  * @Author: yuqin
  * @Date: 2019-08-15 14:14:27
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-19 11:44:30
+ * @LastEditTime: 2019-08-29 14:49:21
  */
 import React, { Component } from 'react'
 import { Drawer, List, NavBar, Icon } from 'antd-mobile';
-import NavBarHeader from '../../../components/NavBarHeader'
 import './index.less'
 
 class App1 extends Component {
@@ -35,9 +34,6 @@ class App1 extends Component {
     </List>);
 
     return (<div>
-      <NavBarHeader title="抽屉" cb={() => {
-        this.props.history.replace("navPage");
-      }} />
       <NavBar  mode="light" icon={<Icon type="ellipsis" />} onLeftClick={this.onOpenChange}>基础</NavBar>
       <Drawer
         className="my-drawer"
