@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-27 16:34:38
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-29 14:14:01
+ * @LastEditTime: 2019-09-20 15:08:39
  */
 export const MenusDataApi = (params) => {
   return new Promise(resolve => {
@@ -30,6 +30,7 @@ export const MenusDataApi = (params) => {
               { key: '/home/table/look', title: '表单查询', icon: '' },
               { key: '/home/table/tree', title: '表单树形', icon: '' },
               { key: '/home/table/router', title: '表单路由', icon: '' },
+              { key: '/home/table/handson', title: 'handsontable', icon: '' },
             ]
           },
           {

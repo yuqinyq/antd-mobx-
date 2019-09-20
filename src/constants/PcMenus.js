@@ -20,6 +20,7 @@ export const menus = [
       { key: '/home/table/look', title: '表单查询', icon: '' },
       { key: '/home/table/tree', title: '表单树形', icon: '' },
       { key: '/home/table/router', title: '表单路由', icon: '' },
+      { key: '/home/table/handson', title: 'handsontable', icon: '' },
     ]
   },
   {

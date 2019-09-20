@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-07-18 16:56:40
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-19 10:22:41
+ * @LastEditTime: 2019-09-20 15:10:10
  */
 import React from 'react'
 import { withRouter, Switch, Redirect } from 'react-router-dom'
@@ -71,6 +71,7 @@ class ContentMain extends React.Component {
           <PrivateRoute exact path='/home/table/tree' component={TreeTableList} />
           <PrivateRoute exact path='/home/table/router' component={RouterTableList} />
           <PrivateRoute exact path='/home/table/router/item/:id' component={RouterTableItem} />
+          <PrivateRoute exact path='/home/table/handson' component={RouterTableItem} />
 
           <PrivateRoute exact path='/home/general/button' component={ButtonDemo} />
           <PrivateRoute exact path='/home/general/icon' component={IconDemo} />
