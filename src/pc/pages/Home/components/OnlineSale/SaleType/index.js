@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-07-24 10:10:15
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-22 10:19:34
+ * @LastEditTime: 2019-11-05 11:26:37
  */
 import React from 'react'
 import { Card, Menu, Dropdown, Radio } from 'antd'
@@ -41,9 +41,9 @@ const data = {
 
 class SaleType extends React.Component {
   state = {
-    type: "all"
+    type: "all",
+    data: {}
   }
-
 
 
   pieInfo = () => {
@@ -119,7 +119,7 @@ class SaleType extends React.Component {
     myChart.setOption(option)
     window.onresize = setTimeout(function () {
       myChart.resize();
-    },200)
+    }, 200)
   }
   componentDidMount() {
     this.pieInfo()
@@ -170,7 +170,7 @@ class SaleType extends React.Component {
 
     return (
       <Card title="销售额类别占比" extra={more}>
-        <div id="qfSalePie" style={{height: '300px' ,width:'500px'}}>
+        <div id="qfSalePie" style={{ height: '300px', width: '500px' }}>
 
         </div>
       </Card>

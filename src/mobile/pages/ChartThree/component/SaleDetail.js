@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-08-23 13:52:03
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-23 16:26:41
+ * @LastEditTime: 2019-11-05 15:10:49
  */
 import React, { Component } from 'react'
 import echarts from 'echarts/lib/echarts';
@@ -52,7 +52,7 @@ const columns = [
         sorter: (a, b) => a.increase - b.increase,
         render: (item) => {
           var reg = /^\d+(?=\.{0,1}\d+$|$)/
-          return <span style={{ color: reg.test(item) ? '#ff0000' : 'rgb(0, 150, 0)' }}>{item}%</span>
+          return <span style={{ color: reg.test(item) ?  'rgb(0, 150, 0)' :'#ff0000' }}>{item}%</span>
         }
       }
     ]

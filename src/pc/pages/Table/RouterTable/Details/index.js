@@ -10,7 +10,7 @@ import './index.less'
 class DetailsTable extends React.Component {
   constructor(props) {
     super(props);
-    this.handsontableData = Handsontable.helper.createSpreadsheetData(80, 10);
+    this.handsontableData = Handsontable.helper.createSpreadsheetData(70, 10);
   }
 
   render() {

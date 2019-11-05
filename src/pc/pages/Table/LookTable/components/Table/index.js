@@ -1,3 +1,11 @@
+/*
+ * @Descripttion:
+ * @version:
+ * @Author: yuqin
+ * @Date: 2019-07-25 17:46:22
+ * @LastEditors: yuqin
+ * @LastEditTime: 2019-11-05 14:04:07
+ */
 import React from "react";
 import { Table } from 'antd';
 import { observer } from 'mobx-react'
@@ -16,7 +24,7 @@ class TableList extends React.Component {
         name: record.name,
       }),
     };
-    const { store } = this.props
+    const { store} = this.props
     return (
       <Table
         columns={store.columns}
@@ -31,7 +39,7 @@ class TableList extends React.Component {
           current: store.pageNo,
           onChange: (pageNo) => {
             store.fetchList({
-              pageNo
+              pageNo:pageNo
             })
           }
         }}

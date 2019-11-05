@@ -4,7 +4,7 @@
  * @Author: yuqin
  * @Date: 2019-07-17 14:03:56
  * @LastEditors: yuqin
- * @LastEditTime: 2019-08-19 14:24:27
+ * @LastEditTime: 2019-11-05 15:16:32
  -->
 ## scli-mobx-template
 
@@ -123,9 +123,9 @@ pages-> 业务页面文件夹--大写字母开头驼峰命名      例：Home(�
 class 命名以 qf-开头 例： qf-header-image (头部头像样式)
 ```
 ......
-
+<!-- 
 ### electron-react桌面应用
 ```
 $ yarn run electron-start    --桌面应用启动
 $ yarn run package           --打包桌面应用
-```
+``` -->
