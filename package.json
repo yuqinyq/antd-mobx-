@@ -28,7 +28,7 @@
     "draftjs-to-html": "^0.8.4",
     "draftjs-to-markdown": "^0.5.1",
     "echarts": "^4.2.1",
-    "electron": "^6.0.1",
+    "electron": "^9.1.0",
     "eslint-config-react-app": "^2.1.0",
     "eslint-plugin-flowtype": "2.39.1",
     "eslint-plugin-jsx-a11y": "5.1.1",
